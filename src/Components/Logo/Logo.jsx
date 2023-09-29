@@ -1,4 +1,5 @@
 import { Tilt } from 'react-tilt'
+import brain from './brain.png'
 
 const defaultOptions = {
   reverse: false,
@@ -16,11 +17,13 @@ const Logo = () => {
   return (
     <div className="mt-0 m-4">
       <Tilt
-        className="border border-2 shadow-md"
+        className=" shadow-md"
         options={defaultOptions}
         style={{ height: 150, width: 150 }}
       >
-        <div className="p-6">👽</div>
+        <div className="p-6">
+          <img src={brain} alt="logo" />
+        </div>
       </Tilt>
     </div>
   )

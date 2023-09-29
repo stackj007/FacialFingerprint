@@ -3,7 +3,7 @@
 const Navigation = () => {
   return (
     <nav className="flex justify-end">
-      <button className=" p-6  font-bold  underline">
+      <button className=" p-6  font-bold text-lg underline">
         Sign Out
       </button>
     </nav>
