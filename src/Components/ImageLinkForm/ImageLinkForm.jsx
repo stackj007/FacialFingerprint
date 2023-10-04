@@ -8,7 +8,7 @@ const ImageLinkForm = () => {
         try
       </p>
 
-      <div className="Form flex justify-center shadow-md p-4">
+      <div className="Form flex justify-center shadow-md p-4 rounded-md">
         <input
           className="w-[55%]  border-2 border-gray-300 rounded-md"
           type="text"
