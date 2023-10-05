@@ -20,8 +20,12 @@ class App extends Component {
     console.log(event.target.value)
   }
 
-  // #######
-  // particles
+  onSubmit = () => {
+    console.log('click')
+  }
+
+  // ######
+  // <particles>
   particlesInit = async (engine) => {
     console.log(engine)
     await loadSlim(engine)
@@ -47,8 +51,8 @@ class App extends Component {
         },
       },
     }
+    // <particles/>
     // #######
-    // particles
 
     return (
       <div className="App">
@@ -63,7 +67,10 @@ class App extends Component {
         <Navigation />
         <Logo />
         <Rank />
-        <ImageLinkForm onInputChange={this.onInputChange} />
+        <ImageLinkForm
+          onInputChange={this.onInputChange}
+          onButtonSubmit={this.onSubmit}
+        />
       </div>
     )
   }
