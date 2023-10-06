@@ -14,8 +14,6 @@ const USER_ID = 'z8qe93kvskhl'
 const APP_ID = 'my-first-application-rvyxg2'
 const MODEL_ID = 'face-detection'
 const MODEL_VERSION_ID = '6dc7e46bc9124c5c8824be4822abe105'
-const IMAGE_URL =
-  'https://samples.clarifai.com/metro-north.jpg'
 
 class App extends Component {
   constructor() {
@@ -24,6 +22,7 @@ class App extends Component {
       input: '',
       imageUrl: '',
       results: null,
+      displayImage: false, // New state variable
     }
     this.detectFaces = this.detectFaces.bind(this)
   }
@@ -57,7 +56,10 @@ class App extends Component {
     axios
       .post(url, requestBody, config)
       .then((response) => {
-        this.setState({ results: response.data })
+        this.setState({
+          results: response.data,
+          displayImage: true, // Set displayImage to true after fetching results
+        })
       })
       .catch((error) => {
         console.error('Error:', error)
@@ -122,11 +124,17 @@ class App extends Component {
           onInputChange={this.onInputChange}
           onButtonSubmit={this.onButtonSubmit}
         />
-        {this.state.imageUrl && (
-          <img src={this.state.imageUrl} alt="Input" />
+        {this.state.displayImage && (
+          <img
+            className="flex flex-center"
+            src={this.state.imageUrl}
+            alt="Detected Face"
+          />
         )}
         {this.state.results && (
-          <div>{JSON.stringify(this.state.results)}</div>
+          <div>
+            {/* Display face detection information here */}
+          </div>
         )}
       </div>
     )
