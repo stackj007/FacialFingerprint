@@ -125,11 +125,14 @@ class App extends Component {
           onButtonSubmit={this.onButtonSubmit}
         />
         {this.state.displayImage && (
-          <img
-            className="flex flex-center"
-            src={this.state.imageUrl}
-            alt="Detected Face"
-          />
+          <div className="flex justify-center">
+            {' '}
+            {/* Center the image */}
+            <img
+              src={this.state.imageUrl}
+              alt="Detected Face"
+            />
+          </div>
         )}
         {this.state.results && (
           <div>
